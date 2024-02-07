@@ -29,19 +29,13 @@ const images = [
 ];
 
 const galleryList = document.querySelector(".gallery");
-images.forEach(image =>{
-  const newList = document.createElement("li");
-  newList.classList.add("gallery-item");
-
-  const imgElement = document.createElement("img");
-  imgElement.classList.add("gallery-img")
-  imgElement.src = image.url;
-
-  imgElement.alt = image.alt;
-  
-  newList.appendChild(imgElement);
-  galleryList.appendChild(newList);
-
+let html = '';
+images.forEach(image => {
+  html += `<li class="gallery-item"><img class="gallery-img" src="${image.url}" alt="${image.alt}"></li>`;
 });
+galleryList.innerHTML = html;
 
+
+
+  
 
